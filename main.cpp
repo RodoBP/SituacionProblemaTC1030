@@ -17,7 +17,7 @@ void fight(vector<Personaje*> vecPersonaje){
     const int attack = 10;
     rand() % attack) + 1
     while(vecPersonaje[0]->getVida()>0 ||vecPersonaje[1]->getVida()>0){
-        
+
     }
 }
 
@@ -44,6 +44,28 @@ int main(){
     vecPersonaje[0]->addItemMoneda();
     vecPersonaje[0]->addItemMedallon();
     vecPersonaje[0]->showInventory();
+
+
+    // Cuartos
+    vector<Cuarto*> vecCuarto;
+    Cuarto *objCuarto;
+    objCuarto = new Cuarto("Sala",0);
+    vecCuarto.push_back(objCuarto);
+
+    objCuarto = new Cuarto("Cocina",0);
+    vecCuarto.push_back(objCuarto);
+
+    objCuarto = new Cuarto("Cuarto del Arte",0);
+    vecCuarto.push_back(objCuarto);
+
+    objCuarto = new Cuarto("Habitacion",0);
+    vecCuarto.push_back(objCuarto);
+
+    objCuarto = new Cuarto("Cuarto Final Secreto",1);
+    vecCuarto.push_back(objCuarto);
+
+    
+
 
     cout << "En una tierra muy muy lejana existe una extraordinaria riqueza. Todo el que se ha atrevido a buscarla,"
     " ha perdido la vida. Aquellos con corazones deseosos se exponen al riesgo y deciden emprender la misión con el" 
