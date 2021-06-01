@@ -12,11 +12,11 @@ using namespace std;
 #include "Jugador.h"
 #include "Troll.h"
 #include "Items.h"
-
+#include "Cuartos.h"
 void fight(vector<Personaje*> vecPersonaje){
     const int attack = 10;
-    rand() % attack) + 1
-    while(vecPersonaje[0]->getVida()>0 ||vecPersonaje[1]->getVida()>0){
+    rand() % attack) + 1;
+    while(vecPersonaje[0].getVida()>0 ||vecPersonaje[1].getVida()>0){
 
     }
 }
@@ -64,7 +64,7 @@ int main(){
     objCuarto = new Cuarto("Cuarto Final Secreto",1);
     vecCuarto.push_back(objCuarto);
 
-    
+
 
 
     cout << "En una tierra muy muy lejana existe una extraordinaria riqueza. Todo el que se ha atrevido a buscarla,"
