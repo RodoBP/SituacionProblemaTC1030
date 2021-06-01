@@ -23,6 +23,7 @@ class Personaje {
         virtual string getName();
         virtual int getMonedas();
         virtual int getVida();
+        virtual void hit();
 
         void setName(string);
 
@@ -53,6 +54,10 @@ int Personaje::getMonedas(){
 
 int Personaje::getVida(){
     return HP;
+}
+
+void Personaje::hit(){
+    cout <<"El personaje golpea." << endl;
 }
 
 void Personaje::addItemMoneda(){

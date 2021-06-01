@@ -10,6 +10,9 @@ class Jugador : public Personaje {
     public:
         Jugador();
         Jugador(string);
+        int getMonedas();
+        int getVida();
+        
 };
 
 Jugador::Jugador(){
@@ -22,4 +25,11 @@ Jugador::Jugador(string nom): Personaje(nom) {
     nombre = nom;
     monedas = 0;
     HP = 50;
+}
+
+int Jugador::getMonedas(){
+    return monedas;
+}
+int Jugador::getVida(){
+    return HP;
 }
