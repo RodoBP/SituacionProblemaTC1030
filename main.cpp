@@ -15,9 +15,9 @@ using namespace std;
 #include "Cuartos.h"
 void fight(vector<Personaje*> vecPersonaje){
     const int attack = 10;
-    rand() % attack) + 1;
-    while(vecPersonaje[0].getVida()>0 ||vecPersonaje[1].getVida()>0){
-
+    //rand() % attack) + 1;
+    while(vecPersonaje[0]->getVida()>0 || vecPersonaje[1]->getVida()>0){
+        cout <<"entre al while"<<endl;
     }
 }
 
