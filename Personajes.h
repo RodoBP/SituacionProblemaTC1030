@@ -23,7 +23,10 @@ class Personaje {
         virtual string getName();
         virtual int getMonedas();
         virtual int getVida();
+        virtual vector<Item*> getInventario();
         virtual void hit();
+
+        void setMonedas(int);
 
         void setName(string);
 
@@ -56,6 +59,14 @@ int Personaje::getVida(){
     return HP;
 }
 
+vector<Item*> Personaje::getInventario(){
+    return inventario;
+}
+
+void Personaje::setMonedas(int mon){
+    monedas = mon;
+}
+
 void Personaje::hit(){
     cout <<"El personaje golpea." << endl;
 }
@@ -67,8 +78,6 @@ void Personaje::addItemMoneda(){
     objItems = new Moneda();
 
     inventario.push_back(objItems);
-
-    cout<<inventario[0]->getName()<<endl;
 }
 
 void Personaje::addItemMedallon(){
@@ -92,6 +101,7 @@ void Personaje::showInventory(){
     for(int i = 0; i<inventario.size(); i++){
         cout<< inventario[i]->getName()<<endl;
         cout<< inventario[i]->getDescripcion()<<endl;
+        cout<<endl;
     }
 }
 

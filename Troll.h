@@ -29,11 +29,10 @@ int Troll::randomMonedas(){
 
     Sleep(500);
     srand (time(NULL));
-    int min = 20;
-    int max = 100;
+    int min = 80;
+    int max = 120;
     int range = max - min + 1;
-    int monran = rand() % range + min;
-
-    monedas = monran;
+    int monedas = rand() % range + min;
+    
     return monedas;
 }

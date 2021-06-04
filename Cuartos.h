@@ -23,11 +23,12 @@ class Cuarto{
         int getRespCorrecta();
         void entrar();
         void salir();
+        void setStatus(bool);
 };
 
 Cuarto::Cuarto(){
     descripCuarto = "";
-    status = true; // singnifica que el cuarto esta abierto
+    status = false; 
 }
 Cuarto::Cuarto(string d, int s){
     descripCuarto = d;
@@ -41,6 +42,10 @@ int Cuarto::getStatus(){
 }
 string Cuarto::getAcertijo(){
     return acertijo;
+}
+
+void Cuarto::setStatus(bool sta){
+    status = sta;
 }
 
 int Cuarto::getRespCorrecta(){

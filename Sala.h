@@ -14,7 +14,7 @@ class Sala: public Cuarto{
 
 Sala::Sala(){
     descripCuarto = "Aquí va la descipción del cuarto";
-    status = true; // singnifica que el cuarto esta cerrado
+    status = false; // singnifica que el cuarto no esta completado
     acertijo  = "Aquí va el acertijo";
-    respCorrecta  = 1;
+    respCorrecta  = 1; //La respuesta 1 es blablabla
 }

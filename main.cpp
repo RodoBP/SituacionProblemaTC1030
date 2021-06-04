@@ -12,7 +12,8 @@ using namespace std;
 #include "Jugador.h"
 #include "Troll.h"
 #include "Items.h"
-#include "Cuartos.h"
+#include "Sala.h"
+
 void fight(vector<Personaje*> vecPersonaje){
     const int attack = 10;
     //rand() % attack) + 1;
@@ -22,29 +23,14 @@ void fight(vector<Personaje*> vecPersonaje){
 }
 
 int main(){
+    Moneda i1;
+    Sala s1;
+
     string n = "";
     string resp = "";
-
-
-    vector<Personaje*> vecPersonaje;
-    Personaje *objPersonaje;
-
-    objPersonaje = new Jugador(n);
-    vecPersonaje.push_back(objPersonaje);
-
-    objPersonaje = new Troll();
-    vecPersonaje.push_back(objPersonaje);
-
-    for (int i = 0; i<vecPersonaje.size(); i++){
-        cout<<vecPersonaje[i]->getName()<<endl;
-        cout<<vecPersonaje[i]->getMonedas()<<endl;
-        cout<<vecPersonaje[i]->getVida()<<endl;
-    }
-
-    vecPersonaje[0]->addItemMoneda();
-    vecPersonaje[0]->addItemMedallon();
-    vecPersonaje[0]->showInventory();
-
+    int cuarto = 0;
+    int nvalor = 0;
+    int oldvalor = 0;
 
     // Cuartos
     vector<Cuarto*> vecCuarto;
@@ -67,31 +53,101 @@ int main(){
 
 
 
-    cout << "En una tierra muy muy lejana existe una extraordinaria riqueza. Todo el que se ha atrevido a buscarla," << endl
-   << " ha perdido la vida. Aquellos con corazones deseosos se exponen al riesgo y deciden emprender la misión con el" <<
-    " objetivo de volverse victoriosos y por fin, resolver el misterio sobre las desapariciones de los antiguos aventureros. "
-    " El monto está situado dentro de una enorme mansión con aura excéntrica, donde hay cuatro cuartos que deben"
-    " ser vistos de arriba a abajo y una habitación final cerrada. En estos se encuentran los acertijos que deben"
-    " ser respondidos para así obtener las monedas de poco en poco. Esta misión no es para los impacientes. Sin" 
-    " embargo, como en la vida, siempre hay un camino fácil. Cuenta la leyenda que existe un medallón de oro, el"
-    " cual es muy útil pero se desconoce su función, solo aquellos que lo han usado saben de sus maravillas. Se"
-    " rumora que el no ser lo suficientemente codiciosos llevó a los anteriores osados a perderlo todo. ¿Deseas"
-    " arriesgarte y participar en esta búsqueda? ¿Quién estará detrás de las desapariciones?" << endl;
+        cout << "En una tierra muy muy lejana existe una extraordinaria riqueza. Todo el que se ha atrevido a buscarla," << endl
+    << " ha perdido la vida. Aquellos con corazones deseosos se exponen al riesgo y deciden emprender la misión con el" << endl
+    <<" objetivo de volverse victoriosos y por fin, resolver el misterio sobre las desapariciones de los antiguos aventureros. "<< endl
+    <<" El monto está situado dentro de una enorme mansión con aura excéntrica, donde hay cuatro cuartos que deben"<< endl
+    <<" ser vistos de arriba a abajo y una habitación final cerrada. En estos se encuentran los acertijos que deben"<< endl
+    <<" ser respondidos para así obtener las monedas de poco en poco. Esta misión no es para los impacientes. Sin" << endl
+    <<" embargo, como en la vida, siempre hay un camino fácil. Cuenta la leyenda que existe un medallón de oro, el" << endl
+    <<" cual es muy útil pero se desconoce su función, solo aquellos que lo han usado saben de sus maravillas. Se"<< endl
+    <<" rumora que el no ser lo suficientemente codiciosos llevó a los anteriores osados a perderlo todo. ¿Deseas"<< endl
+    <<" arriesgarte y participar en esta búsqueda? ¿Quién estará detrás de las desapariciones?" << endl;
 
-    cout <<"Ah! con que eres tu el aventurero que desea adentrarse en este misterio. He escuchado terribles historias"
-    " relacionadas con esta misión. Cuenta la leyenda que, solo los temerarios saldran con vida. Descuida, yo te guiare"
-    " durante todo este recorrido y aseguraremos que obtengas todas las riquezas que hay dentro de esa casa. Me repites"
-    " tu nombre por favor?" << endl;
+    cout <<"Ah! con que eres tu el aventurero que desea adentrarse en este misterio. He escuchado terribles historias"<<endl
+    <<" relacionadas con esta misión. Cuenta la leyenda que, solo los temerarios saldran con vida. Descuida, yo te guiare"<<endl
+    <<" durante todo este recorrido y aseguraremos que obtengas todas las riquezas que hay dentro de esa casa. Me repites"<<endl
+    <<" tu nombre por favor?" << endl;
 
     cin >> n;
 
-    cout << "Ah " << n << ", claro! He escuchado mucho sobre ti. Bueno, mucho gusto."
+    cout << "Ah " << n << ", claro! He escuchado mucho sobre ti. Bueno, mucho gusto."<<endl;
     //////
 
+    vector<Personaje*> vecPersonaje;
+    Personaje *objPersonaje;
+
+    objPersonaje = new Jugador(n);
+    vecPersonaje.push_back(objPersonaje);
+
+    objPersonaje = new Troll();
+    vecPersonaje.push_back(objPersonaje);
+
+    for (int i = 0; i<vecPersonaje.size(); i++){
+        cout<<vecPersonaje[i]->getName()<<endl;
+        cout<<vecPersonaje[i]->getMonedas()<<endl;
+        cout<<vecPersonaje[i]->getVida()<<endl;
+    }
 
 
+    cout<<"Intro de la casa"<<endl;
 
-    cout << vecPersonaje[0]->getName() << " recolectaste " << vecPersonaje)[0]->getMonedas<< " monedas." << endl; 
+    while(cuarto > 4 || cuarto < 1){  
+        cout<<"Presentacion de cuartos"<<endl;
+        cin>>cuarto;
+
+        if(cuarto == 1){
+            if(s1.getStatus() == false){
+
+                s1.entrar();
+                cout<<s1.getStatus()<<endl;
+                cout<<s1.getDescripCuarto()<<endl;
+
+                int resp;
+                cout << s1.getAcertijo() << endl;
+                cin >> resp; //respuesta de opción múltiple al acertijo
+                if(s1.getRespCorrecta() != resp){
+                    cout << "Respuesta incorrecta. No lograste responder este acertijo." << endl;
+                    }
+                else{
+                    cout << "Usted es excepcional, tiene habilidades de detective! Ha conseguido recolectar monedas."<<endl;
+                    if(vecPersonaje[0]->getMonedas() == 0){
+                        vecPersonaje[0]->addItemMoneda();
+                        i1.use();
+                        nvalor = i1.getValor();
+                        vecPersonaje[0]->setMonedas(nvalor);
+
+                        cout<<vecPersonaje[0]->getMonedas()<<endl;
+                    }
+                    else{
+                        i1.use();
+                        nvalor = i1.getValor();
+                        oldvalor = vecPersonaje[0]->getMonedas();
+                        nvalor = oldvalor + nvalor;
+                        vecPersonaje[0]->setMonedas(nvalor);
+                        cout<<vecPersonaje[0]->getMonedas()<<endl;
+                    }
+                    s1.setStatus(true);
+                } 
+                cuarto = 0;
+                s1.salir();
+            }
+            else{
+                cout<<"Ya resolviste este cuarto."<<endl;
+                cuarto = 0;
+            }
+        }
+        else if(cuarto == 2){
+
+        }
+        else if(cuarto == 3){
+
+        }
+        else if(cuarto == 4){
+
+        }
+    }
+    /*cout << vecPersonaje[0]->getName() << " recolectaste " << vecPersonaje)[0]->getMonedas<< " monedas." << endl; 
     cout << "El troll tiene " << vecPersonaje[1] ->getMonedas() << " monedas." <<endl;
     // Combate
     if (vecPersonaje)[1]->randomMonedas() > vecPersonaje)[0]->getMonedas()){
@@ -107,6 +163,6 @@ int main(){
             //mandarlos al menú
         }
         
-    }
+    }*/
     return 0;
 }

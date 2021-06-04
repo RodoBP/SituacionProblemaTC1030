@@ -5,6 +5,10 @@ Programación Orientada a Objetos
 Grupo 700
 29 de mayo de 2021*/
 #include "Items.h"
+#include <stdlib.h>
+#include <stdio.h> 
+#include <time.h> 
+#include <Windows.h>
 
 class Moneda: public Item{
     public:
@@ -20,6 +24,14 @@ Moneda::Moneda(){
 }
 
 void Moneda::use(){
+    srand(time(0));
 
-    cout<<"Este medallon hace algo pero el profe no nos ha dicho."<<endl;
+    Sleep(500);
+    srand (time(NULL));
+    int min = 10;
+    int max = 25;
+    int range = max - min + 1;
+    valor = rand() % range + min;
+    cout<<"Has conseguido "<< valor << " monedas."<<endl;
+
 }
