@@ -67,8 +67,8 @@ int main(){
 
 
 
-    cout << "En una tierra muy muy lejana existe una extraordinaria riqueza. Todo el que se ha atrevido a buscarla,"
-    " ha perdido la vida. Aquellos con corazones deseosos se exponen al riesgo y deciden emprender la misión con el" 
+    cout << "En una tierra muy muy lejana existe una extraordinaria riqueza. Todo el que se ha atrevido a buscarla," << endl
+   << " ha perdido la vida. Aquellos con corazones deseosos se exponen al riesgo y deciden emprender la misión con el" <<
     " objetivo de volverse victoriosos y por fin, resolver el misterio sobre las desapariciones de los antiguos aventureros. "
     " El monto está situado dentro de una enorme mansión con aura excéntrica, donde hay cuatro cuartos que deben"
     " ser vistos de arriba a abajo y una habitación final cerrada. En estos se encuentran los acertijos que deben"

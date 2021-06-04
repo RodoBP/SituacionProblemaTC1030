@@ -49,3 +49,4 @@ void Cuarto::entrar(){
 void Cuarto::salir(){
     cout << "Has salido de la habitacion."<< endl;
 }
+#endif
