@@ -6,6 +6,7 @@ Grupo 700
 29 de mayo de 2021*/
 #ifndef Cuartos_h
 #define Cuartos_h
+
 class Cuarto{
     protected:
         string descripCuarto;
