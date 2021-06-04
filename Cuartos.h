@@ -7,10 +7,11 @@ Grupo 700
 #ifndef Cuartos_h
 #define Cuartos_h
 class Cuarto{
-    private:
+    protected:
         string descripCuarto;
-        int status; // Este indica si el cuarto está cerrado o no
+        bool status; // Este indica si el cuarto está cerrado o no
         string acertijo;
+        int respCorrecta;
 
     public:
         Cuarto();
@@ -19,13 +20,14 @@ class Cuarto{
         int getStatus();
         string getAcertijo();
         void setAcertijo(string);
+        int getRespCorrecta();
         void entrar();
         void salir();
 };
 
 Cuarto::Cuarto(){
     descripCuarto = "";
-    status = 1; // singnifica que el cuarto esta cerrado
+    status = true; // singnifica que el cuarto esta abierto
 }
 Cuarto::Cuarto(string d, int s){
     descripCuarto = d;
@@ -40,9 +42,12 @@ int Cuarto::getStatus(){
 string Cuarto::getAcertijo(){
     return acertijo;
 }
-string Cuarto::setAcertijo(string a){
-    acertijo = a;
+
+int Cuarto::getRespCorrecta(){
+    return respCorrecta;
 }
+
+
 void Cuarto::entrar(){
     cout << "Has ingresado a la habitacion."<< endl;
 }

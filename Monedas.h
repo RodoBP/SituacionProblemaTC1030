@@ -16,8 +16,7 @@ class Moneda: public Item{
 Moneda::Moneda(){
     name = "Moneda";
     descripcion = "Has reunido riquezas!";
-    HP = 0;
-    cout<< "Conseguiste una moneda"<<endl;
+    valor = 0; // aquí debemos poner lo de rand
 }
 
 void Moneda::use(){

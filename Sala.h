@@ -5,3 +5,16 @@ Programación Orientada a Objetos
 Grupo 700
 29 de mayo de 2021*/
 
+#include "Cuartos.h"
+
+class Sala: public Cuarto{
+    public:
+        Sala();
+};
+
+Sala::Sala(){
+    descripCuarto = "Aquí va la descipción del cuarto";
+    status = true; // singnifica que el cuarto esta cerrado
+    acertijo  = "Aquí va el acertijo";
+    respCorrecta  = 1;
+}

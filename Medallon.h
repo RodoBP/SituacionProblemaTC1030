@@ -16,7 +16,7 @@ class Medallon: public Item{
 Medallon::Medallon(){
     name = "Medallon";
     descripcion = "Sientes una gran magia dentro de este medallon.";
-    HP = 20;
+    valor = 20;
     cout<<"Conseguiste el Medallon"<<endl;
 }
 

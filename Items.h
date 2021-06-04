@@ -11,13 +11,13 @@ class Item{
     protected:
         string name;
         string descripcion;
-        int HP;
+        int valor;
     public:
         Item();
 
         virtual string getName();
         virtual string getDescripcion();
-        virtual int getHP();
+        virtual int getValor();
 
         virtual void use();
 
@@ -26,7 +26,7 @@ class Item{
 Item::Item(){
     name = "";
     descripcion = "";
-    HP = 0;
+    valor = 0;
 }
 
 string Item::getName(){
@@ -37,8 +37,8 @@ string Item::getDescripcion(){
     return descripcion;
 }
 
-int Item::getHP(){
-    return HP;
+int Item::getValor(){
+    return valor;
 }
 
 void Item::use(){
