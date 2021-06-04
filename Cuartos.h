@@ -4,8 +4,8 @@ TC1030
 Programación Orientada a Objetos
 Grupo 700
 29 de mayo de 2021*/
-#include "Personajes.h"
-
+#ifndef Cuartos_h
+#define Cuartos_h
 class Cuarto{
     private:
         string descripCuarto;
