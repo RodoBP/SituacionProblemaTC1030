@@ -6,12 +6,12 @@ Grupo 700
 29 de mayo de 2021*/
 #include <iostream>
 #include <vector>
+#include <string>
 using namespace std;
 
 
 #include "Jugador.h"
 #include "Troll.h"
-#include "Items.h"
 #include "Sala.h"
 
 void fight(vector<Personaje*> vecPersonaje){
@@ -30,6 +30,7 @@ int main(){
     string resp = "";
     int cuarto = 0;
     int nvalor = 0;
+    int nvalor1 = 0;
     int oldvalor = 0;
 
     // Cuartos
@@ -82,6 +83,11 @@ int main(){
 
     objPersonaje = new Troll();
     vecPersonaje.push_back(objPersonaje);
+
+    nvalor1 = static_cast<Troll *>(vecPersonaje[1])->randomMonedas();
+    vecPersonaje[1]->setMonedas(nvalor1);
+
+
 
     for (int i = 0; i<vecPersonaje.size(); i++){
         cout<<vecPersonaje[i]->getName()<<endl;
