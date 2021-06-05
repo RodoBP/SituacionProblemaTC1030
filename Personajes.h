@@ -99,9 +99,16 @@ void Personaje::showInventory(){
     cout <<endl;
     cout << "----------Displaying the Inventory:----------"<<endl;
     for(int i = 0; i<inventario.size(); i++){
-        cout<< inventario[i]->getName()<<endl;
-        cout<< inventario[i]->getDescripcion()<<endl;
-        cout<<endl;
+        if(inventario[i]->getName() == "Coins"){
+            cout<< inventario[i]->getName()<<"..... You got: "<<monedas<<endl;
+            cout<< inventario[i]->getDescripcion()<<endl;
+            cout<<endl;
+        }
+        else{
+            cout<< inventario[i]->getName()<<endl;
+            cout<< inventario[i]->getDescripcion()<<endl;
+            cout<<endl;
+        }
     }
 }
 

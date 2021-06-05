@@ -18,7 +18,7 @@ class Moneda: public Item{
 };
 
 Moneda::Moneda(){
-    name = "Moneda";
+    name = "Coins";
     descripcion = "You have adquired coins!";
     valor = 0; 
 }

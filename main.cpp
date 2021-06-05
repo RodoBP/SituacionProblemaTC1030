@@ -170,9 +170,9 @@ int main(){
     << "entirely sure of its inside because it is locked. Maybe if we answer all of the riddles available" << endl
     << "we would be able to maybe take a peak in the fifth room." << endl; 
     system("pause");
-    while(cuarto > 5 || cuarto < 1){
+    while(cuarto > 6 || cuarto < 1){
         cout<<"So, which room are you feeling?"<<endl; 
-        cout << " [1] Lounge \n [2] Kitchen \n [3] Arts room \n [4] Bedroom \n [5] The secret room" << endl;
+        cout << " [1] Lounge \n [2] Kitchen \n [3] Arts room \n [4] Bedroom \n [5] The secret room \n [6] Your Inventory \n [7] Give up" << endl;
         cin>>cuarto;
 
         if(cuarto == 1){
@@ -234,7 +234,7 @@ int main(){
                     system("pause");
                     }
                 else{
-                    cout << "You are terrific! Ypu have the skills of a detective! You have adquired coins."<<endl;
+                    cout << "You are terrific! You have the skills of a detective! You have adquired coins."<<endl;
                     if(vecPersonaje[0]->getMonedas() == 0){
                         vecPersonaje[0]->addItemMoneda();
                         i1.use();
@@ -372,6 +372,16 @@ int main(){
                 system("pause");
                 cuarto = 0; // si te manda de nuevo a pregunatar por cuartos?
             }
+        }
+        else if(cuarto == 6){
+            vecPersonaje[0]->showInventory();
+            system("pause");
+            cuarto = 0;
+        }
+        else if(cuarto == 7){
+            cout<<"Better luck next time!"<<endl;
+            system("pause");
+            exit(1);
         }
         else{
             cout<<"We should try another number from the ones shown."<<endl;
