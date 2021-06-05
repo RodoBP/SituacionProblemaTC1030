@@ -13,7 +13,7 @@ class CuartoSecreto: public Cuarto{
 };
 
 CuartoSecreto::CuartoSecreto(){
-    descripCuarto = "Aquí va la descipción del cuarto";
+    descripCuarto = "This room is filled with amazing treasures, from gems, coins, to even gold.";
     status = false; // singnifica que el cuarto no esta completado
     acertijo  = "Aquí va el acertijo";
     respCorrecta  = 1; //La respuesta 1 es blablabla

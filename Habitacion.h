@@ -13,7 +13,7 @@ class Habitacion: public Cuarto{
 };
 
 Habitacion::Habitacion(){
-    descripCuarto = "Aquí va la descipción del cuarto";
+    descripCuarto = "This room has a really big bed, next to it it there is are big-brown shoes. The floor is covered with a purple carpet and the ceiling is painted green.";
     status = false; // singnifica que el cuarto no esta completado
     acertijo  = "Aquí va el acertijo";
     respCorrecta  = 1; //La respuesta 1 es blablabla

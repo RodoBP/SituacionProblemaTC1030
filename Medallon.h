@@ -16,11 +16,11 @@ class Medallon: public Item{
 
 Medallon::Medallon(){
     name = "Medallon";
-    descripcion = "Sientes una gran magia dentro de este medallon.";
+    descripcion = "This medallion is really precious and powerful.";
 }
 
 
 void Medallon::use(){
-    cout<<"Este medallon te llena de fuerza!"<<endl;
+    cout<<"This medallion is really precious and powerful. Its function is currently unknown, though."<<endl;
 
 }

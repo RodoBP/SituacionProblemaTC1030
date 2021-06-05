@@ -19,8 +19,8 @@ class Moneda: public Item{
 
 Moneda::Moneda(){
     name = "Moneda";
-    descripcion = "Has reunido riquezas!";
-    valor = 0; // aquí debemos poner lo de rand
+    descripcion = "You have adquired coins!";
+    valor = 0; 
 }
 
 void Moneda::use(){
@@ -32,6 +32,6 @@ void Moneda::use(){
     int max = 25;
     int range = max - min + 1;
     valor = rand() % range + min;
-    cout<<"Has conseguido "<< valor << " monedas."<<endl;
+    cout<<"You have adquired "<< valor << " coins."<<endl;
 
 }

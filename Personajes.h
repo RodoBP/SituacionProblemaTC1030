@@ -38,7 +38,7 @@ class Personaje {
 };
 
 Personaje::Personaje() {
-    nombre = "nadie";
+    nombre = "Nobody";
     HP = 0;
     monedas = 0;
 } 
@@ -68,7 +68,7 @@ void Personaje::setMonedas(int mon){
 }
 
 void Personaje::hit(){
-    cout <<"El personaje golpea." << endl;
+    cout <<"The character hits someone." << endl;
 }
 
 void Personaje::addItemMoneda(){
@@ -97,7 +97,7 @@ void Personaje::setName(string n){
 void Personaje::showInventory(){
     
     cout <<endl;
-    cout << "----------Mostrando Inventario:----------"<<endl;
+    cout << "----------Displaying the Inventory:----------"<<endl;
     for(int i = 0; i<inventario.size(); i++){
         cout<< inventario[i]->getName()<<endl;
         cout<< inventario[i]->getDescripcion()<<endl;

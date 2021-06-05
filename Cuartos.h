@@ -55,9 +55,9 @@ int Cuarto::getRespCorrecta(){
 
 
 void Cuarto::entrar(){
-    cout << "Has ingresado a la habitacion."<< endl;
+    cout << "You have entered the room."<< endl;
 }
 void Cuarto::salir(){
-    cout << "Has salido de la habitacion."<< endl;
+    cout << "You have left the room."<< endl;
 }
 #endif

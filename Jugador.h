@@ -14,7 +14,7 @@ class Jugador : public Personaje {
 };
 
 Jugador::Jugador(){
-    nombre = "nadie";
+    nombre = "Nobody";
     monedas = 0;
     HP = 50;
 }

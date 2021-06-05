@@ -19,15 +19,17 @@ using namespace std;
 #include "CuartodelSecreto.h"
 
 void fight(vector<Personaje*> vecPersonaje){
+    cout << "Even though I did not have enough coins, I will fight for the riches! Let's start the combat Troll!" << endl;
     const int ATTACK = 10;
     int hits = (rand() % ATTACK) + 1;
     while(vecPersonaje[0]->getVida()>0 || vecPersonaje[1]->getVida()>0){
         if(vecPersonaje[0]->getVida() == 0){
-            cout<<"Perdiste buscando el tesoro"<<endl;
+            cout<<"You lost and the troll stole your coins."<<endl;
+            exit(1);
         }
         else{
-            cout<<"Venciste al troll"<<endl;
-            cout<<"MUCHAS FELICIDADES EL TESORO ES TUYO"<<endl;
+            cout<<"You beat the troll"<<endl;
+            cout<<"Wow, we made it! You can now take the riches and call yourself a winner."<<endl;
             system("pause");
             exit(1);
         }
@@ -36,25 +38,32 @@ void fight(vector<Personaje*> vecPersonaje){
 
 void funcionfinal(vector<Personaje*> vecPersonaje){
     vector<Item*> inv1;
-    cout<<"Narracion entrada al cuarto del tesoro"<< endl;
+    cout<<"The door of the Secret room has been opened. Wow! I have never I my life seen this many gems, coins, and diamonds."<< endl
+    << "The room is completely full of them! We have finally made it!" << endl;
     system("pause");
-    cout<<"Troll hablando"<<endl;
+    cout<<"Suddenly, footsteps can be heard. A troll appears before our eyes and he does not seem friendly." << endl;
     system("pause");
+    cout << " Troll: So are you trying to steal my riches? Pathetic. Multiple people have tried it before and no one has been" << endl
+    << "able to do so." << endl;
+    system("pause");
+    cout << "Troll: However, today I am feeling generous so I might allow you to leave with my riches only if you have more coins than me." <<endl
+    << "Haha, but I doubt it, you will never take my riches." << endl;
     if(vecPersonaje[0]->getMonedas() >= vecPersonaje[1]->getMonedas()){
-        cout<<"Narracion de tributo cumplido"<<endl;
+        cout<<"Troll: I cannot belive this! I am not a lier, therefore, you are now the rightful owner of the riches. "<<endl;
         system("pause");
-        cout<<"MUCHAS FELICIDADES EL TESORO ES TUYO"<<endl;
+        cout<<"Wow, we made it! You can now take the riches and call yourself a winner."<<endl;
         system("pause");
         exit(1);
     }
     else{
-        cout<<"Narracion fallo el tributo"<<endl;
+        cout<<"Troll: I knew that you were set up for failure. No one will ever take my riches!"<<endl;
         system("pause");
         inv1 = vecPersonaje[0]->getInventario();
         if(inv1.size() == 2){
-            cout<<"Narracion del medallon"<<endl;
+            cout<<"Nonetheless, the medallion starts shining, its value is actually greater than all of the coins of the troll."<<endl;
             system("pause");
-            cout<<"MUCHAS FELICIDADES EL TESORO ES TUYO"<<endl;
+            cout<<"So, you have won all of the riches."<<endl;
+            cout<<"Wow, we made it! You can now take the riches and call yourself a winner."<<endl;
             system("pause");
         }
         else{
@@ -101,28 +110,31 @@ int main(){
 
 
 
-        cout << "En una tierra muy muy lejana existe una extraordinaria riqueza. Todo el que se ha atrevido a buscarla," << endl
-    << " ha perdido la vida. Aquellos con corazones deseosos se exponen al riesgo y deciden emprender la misión con el" << endl
-    <<" objetivo de volverse victoriosos y por fin, resolver el misterio sobre las desapariciones de los antiguos aventureros. "<< endl
-    <<" El monto está situado dentro de una enorme mansión con aura excéntrica, donde hay cuatro cuartos que deben"<< endl
-    <<" ser vistos de arriba a abajo y una habitación final cerrada. En estos se encuentran los acertijos que deben"<< endl
-    <<" ser respondidos para así obtener las monedas de poco en poco. Esta misión no es para los impacientes. Sin" << endl
-    <<" embargo, como en la vida, siempre hay un camino fácil. Cuenta la leyenda que existe un medallón de oro, el" << endl
-    <<" cual es muy útil pero se desconoce su función, solo aquellos que lo han usado saben de sus maravillas. Se"<< endl
-    <<" rumora que el no ser lo suficientemente codiciosos llevó a los anteriores osados a perderlo todo. ¿Deseas"<< endl
-    <<" arriesgarte y participar en esta búsqueda? ¿Quién estará detrás de las desapariciones?" << endl;
-
+    cout << "In a land far, far away, plenty of riches stay hidden. All of the individuals who have dared to seek them" << endl
+    << "have lost their lives. Those with an eager heart expose themselves to the risks and decide to undertake the mission" << endl
+    << "with the purpose of becoming victorious and finally, solving the mystery about the disappearances of the previous adventurers. " << endl
+    << "The amount is located inside of a giant mansion with an eccentric aura, where there are four rooms that must be inspected " << endl
+    << "head-to-toe; there is also another room but no one really knows what is inside of it since it is locked. These rooms have riddles"<< endl
+    <<"that must be answered correctly to obtain coins gradually. This mission is not meant fo the impatient. However, just like in life " << endl
+    << "there is always a shorter road. Legend says that a medallion exists, which is quite useful, although no one knows its function." << endl
+    << "Only the people who have use it are familiar with its wonders."<< endl;
+    system("pause");
+    cout << "Rumor says that not being greedy enough lead those audicious beings to lose it all." << endl;
+    system("pause");
+    cout << "Are you sure that you want to take part in this and risk it all to participate in the quest? " << endl;
+    system("pause");
+    cout << "Who is behind a all of these disappearances? " << endl;
     system("pause");
 
-    cout <<"Ah! con que eres tu el aventurero que desea adentrarse en este misterio. He escuchado terribles historias"<<endl
-    <<" relacionadas con esta misión. Cuenta la leyenda que, solo los temerarios saldran con vida. Descuida, yo te guiare"<<endl
-    <<" durante todo este recorrido y aseguraremos que obtengas todas las riquezas que hay dentro de esa casa. Me repites"<<endl
-    <<" tu nombre por favor?" << endl;
+
+    cout << "Oh! So you are the adventurer who wants to take part in this quest. I have heard awful stories related to this mission." << endl
+    << "Legend says that only the reckless will survive. But, do not worry, I will guide you through it all and I will make sure that" << endl
+    << "you leave the mansion with all the riches. Would you tell me your name again please?" << endl;
 
     cin >> n;
 
-    cout << "Ah " << n << ", claro! He escuchado mucho sobre ti. Bueno, mucho gusto."<<endl;
-    //////
+    cout << "Oh " << n << ", of course! I have heard lots about you. Well, nice to meet you."<<endl;
+    
 
     vector<Personaje*> vecPersonaje;
     Personaje *objPersonaje;
@@ -145,12 +157,22 @@ int main(){
     }
 
 
-    cout<<"Intro de la casa"<<endl;
+    cout<<"I will lead you to the mansion. As you can probably tell it is pretty lonely there. We"<<endl
+    << "we should start walking now if we want to arrive by noon. The building is impressive, its" << endl
+    << "sets the tone to the rest of the quest. The first time I ever saw it I was sort of scared," << endl
+    << "but do not fear, you will be fine." << endl;
     system("pause");
-    cout<<"Presentacion de cuartos"<<endl;
+    cout<<"After hour of walking, we have finally arrived to the location. The house has an obscure feel."<<endl
+    << "Come in, do not shy away."<< endl;
+    system("pause");
+    cout << "There are four main rooms, the lounge, kitchen, arts room, and bedroom. All of these have a" <<endl
+    << "riddle, which must be answered correctly to obtain coins. There is also a fifth room, but I am not "<< endl
+    << "entirely sure of its inside because it is locked. Maybe if we answer all of the riddles available" << endl
+    << "we would be able to maybe take a peak in the fifth room." << endl; 
     system("pause");
     while(cuarto > 5 || cuarto < 1){
-        cout<<"Menu de cuartos"<<endl;  
+        cout<<"So, which room are you feeling?"<<endl; 
+        cout << " [1] Lounge \n [2] Kitchen \n [3] Arts room \n [4] Bedroom \n [5] The secret room" << endl;
         cin>>cuarto;
 
         if(cuarto == 1){
@@ -164,11 +186,11 @@ int main(){
                 cout << s1.getAcertijo() << endl;
                 cin >> resp; //respuesta de opción múltiple al acertijo
                 if(s1.getRespCorrecta() != resp){
-                    cout << "Respuesta incorrecta. No lograste responder este acertijo." << endl;
+                    cout << "Oh no! The answer is wrong, we have failed to correctly solve the riddle." << endl;
                     system("pause");
                     }
                 else{
-                    cout << "Usted es excepcional, tiene habilidades de detective! Ha conseguido recolectar monedas."<<endl;
+                    cout << "You are terrific! Ypu have the skills of a detective! You have adquired coins."<<endl;
                     if(vecPersonaje[0]->getMonedas() == 0){
                         vecPersonaje[0]->addItemMoneda();
                         i1.use();
@@ -191,7 +213,7 @@ int main(){
                 s1.salir();
             }
             else{
-                cout<<"Ya resolviste este cuarto."<<endl;
+                cout<<"We have already entered this room."<<endl;
                 system("pause");
                 cuarto = 0;
             }
@@ -208,11 +230,11 @@ int main(){
                 cout << c1.getAcertijo() << endl;
                 cin >> resp; //respuesta de opción múltiple al acertijo
                 if(c1.getRespCorrecta() != resp){
-                    cout << "Respuesta incorrecta. No lograste responder este acertijo." << endl;
+                    cout << "Oh no! The answer is wrong, we have failed to correctly solve the riddle." << endl;
                     system("pause");
                     }
                 else{
-                    cout << "Usted es excepcional, tiene habilidades de detective! Ha conseguido recolectar monedas."<<endl;
+                    cout << "You are terrific! Ypu have the skills of a detective! You have adquired coins."<<endl;
                     if(vecPersonaje[0]->getMonedas() == 0){
                         vecPersonaje[0]->addItemMoneda();
                         i1.use();
@@ -235,7 +257,7 @@ int main(){
                 c1.salir();
             }
             else{
-                cout<<"Ya resolviste este cuarto."<<endl;
+                cout<<"We have already entered this room."<<endl;
                 system("pause");
                 cuarto = 0;
             }
@@ -251,11 +273,11 @@ int main(){
                 cout << a1.getAcertijo() << endl;
                 cin >> resp; //respuesta de opción múltiple al acertijo
                 if(a1.getRespCorrecta() != resp){
-                    cout << "Respuesta incorrecta. No lograste responder este acertijo." << endl;
+                    cout << "Oh no! The answer is wrong, we have failed to correctly solve the riddle." << endl;
                     system("pause");
                     }
                 else{
-                    cout << "Usted es excepcional, tiene habilidades de detective! Ha conseguido recolectar monedas."<<endl;
+                    cout << "You are terrific! Ypu have the skills of a detective! You have adquired coins."<<endl;
                     if(vecPersonaje[0]->getMonedas() == 0){
                         vecPersonaje[0]->addItemMoneda();
                         i1.use();
@@ -278,7 +300,7 @@ int main(){
                 a1.salir();
             }
             else{
-                cout<<"Ya resolviste este cuarto."<<endl;
+                cout<<"We have already entered this room."<<endl;
                 system("pause");
                 cuarto = 0;
             }
@@ -294,11 +316,11 @@ int main(){
                 cout << h1.getAcertijo() << endl;
                 cin >> resp; //respuesta de opción múltiple al acertijo
                 if(h1.getRespCorrecta() != resp){
-                    cout << "Respuesta incorrecta. No lograste responder este acertijo." << endl;
+                    cout << "Oh no! The answer is wrong, we have failed to correctly solve the riddle" << endl;
                     system("pause");
                     }
                 else{
-                    cout << "Usted es excepcional, tiene habilidades de detective! Ha conseguido recolectar monedas."<<endl;
+                    cout << "You are terrific! Ypu have the skills of a detective! You have adquired coins."<<endl;
                     if(vecPersonaje[0]->getMonedas() == 0){
                         vecPersonaje[0]->addItemMoneda();
                         i1.use();
@@ -321,19 +343,24 @@ int main(){
                 h1.salir();
             }
             else{
-                cout<<"Ya resolviste este cuarto."<<endl;
+                cout<<"We have already entered this room."<<endl;
                 system("pause");
                 cuarto = 0;
             }
         }
         else if(cuarto == 5){
             if(s1.getStatus() == true && c1.getStatus() == true && a1.getStatus() == true && h1.getStatus() == true){
-                cout<<"Narracion"<<endl;
+                cout<<"An image is suddenly visible on the door of the secret room, an emblem that represent each of the"<<endl
+                << "past rooms is shown. A new previously not visible saying appears on the wall. It read the following:"<< endl;
                 system("pause");
-                cout<<"Pregunta del culpable"<<endl;
+                cout<<"Who is behind of all the disappearances? (Give a single-word answer.)"<<endl;
                 cin>>resMedallon;
-                if(resMedallon == "troll" ||resMedallon == "Troll"){
+                if(resMedallon == "troll" ||resMedallon == "Troll" || resMedallon == "Trol" || resMedallon == "TROLL" || resMedallon == "trol" ){
                     vecPersonaje[0]->addItemMedallon();
+                    funcionfinal(vecPersonaje);
+                    cout << "Congratulations! You have adquired the medallion, only those with a top-analyzing skills have gotten it." << endl
+                    << "Its use is not clear for now, but it is important." << endl; 
+                    system("pause");
                     funcionfinal(vecPersonaje);
                 }
                 else{
@@ -341,13 +368,13 @@ int main(){
                 }
             }
             else{
-                cout<<"Narracion"<<endl;
+                cout<<"I think that we have not searched in all of the previous rooms. We should probably go back and chechk which are we missing to answer the riddle in."<<endl;
                 system("pause");
-                cuarto = 0;
+                cuarto = 0; // si te manda de nuevo a pregunatar por cuartos?
             }
         }
         else{
-            cout<<"Inserte numero correcto"<<endl;
+            cout<<"We should try another number from the ones shown."<<endl;
             cuarto = 0;
         }
     }

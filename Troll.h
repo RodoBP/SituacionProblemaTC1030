@@ -17,7 +17,7 @@ class Troll : public Personaje {
 };
 
 Troll::Troll(){
-    nombre = "TrollMalo";
+    nombre = "Troll";
     monedas = 0;
     HP = 75;
 }
