@@ -29,6 +29,8 @@ class Personaje {
         void setMonedas(int);
 
         void setName(string);
+        void setVida(int);
+        void setVidaZero();
 
         void addItemMoneda();
         void addItemMedallon();
@@ -69,6 +71,7 @@ void Personaje::setMonedas(int mon){
 
 void Personaje::hit(){
     cout <<"The character hits someone." << endl;
+
 }
 
 void Personaje::addItemMoneda(){
@@ -94,6 +97,12 @@ void Personaje::setName(string n){
     nombre = n;
 }
 
+void Personaje::setVida(int v){
+    HP = HP - v;
+}
+void Personaje::setVidaZero(){
+    HP = 0;
+}
 void Personaje::showInventory(){
     
     cout <<endl;

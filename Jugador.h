@@ -10,6 +10,7 @@ class Jugador : public Personaje {
     public:
         Jugador();
         Jugador(string);
+        void hit();
         
 };
 
@@ -22,5 +23,10 @@ Jugador::Jugador(){
 Jugador::Jugador(string nom): Personaje(nom) {
     nombre = nom;
     monedas = 0;
-    HP = 50;
+    HP = 100;
+}
+
+void Jugador::hit(){
+    cout << "The adventurer hits the troll." << endl;
+    
 }

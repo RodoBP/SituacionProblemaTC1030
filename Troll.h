@@ -14,12 +14,13 @@ class Troll : public Personaje {
     public:
         Troll();
         int randomMonedas();
+        void hit();
 };
 
 Troll::Troll(){
     nombre = "Troll";
     monedas = 0;
-    HP = 75;
+    HP = 100;
 }
 
 
@@ -34,4 +35,7 @@ int Troll::randomMonedas(){
     int range = max - min + 1;
     int mon = rand() % range + min;
     return mon;
+}
+void Troll::hit(){
+    cout << "The troll hits the adventurer." << endl;
 }
