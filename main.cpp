@@ -20,6 +20,8 @@ using namespace std;
 
 void fight(vector<Personaje*> vecPersonaje){
     cout << "Even though I did not have enough coins, I will fight for the riches! Let's start the combat Troll!" << endl;
+    system("pause");
+    system("cls");
     const int ATTACK = 10;
     int hits = (rand() % ATTACK) + 1;
     while(vecPersonaje[0]->getVida()>0 || vecPersonaje[1]->getVida()>0){
@@ -43,11 +45,14 @@ void funcionfinal(vector<Personaje*> vecPersonaje){
     system("pause");
     cout<<"Suddenly, footsteps can be heard. A troll appears before our eyes and he does not seem friendly." << endl;
     system("pause");
+    system("cls");
     cout << " Troll: So are you trying to steal my riches? Pathetic. Multiple people have tried it before and no one has been" << endl
     << "able to do so." << endl;
     system("pause");
     cout << "Troll: However, today I am feeling generous so I might allow you to leave with my riches only if you have more coins than me." <<endl
     << "Haha, but I doubt it, you will never take my riches." << endl;
+    system("pause");
+    system("cls");
     if(vecPersonaje[0]->getMonedas() >= vecPersonaje[1]->getMonedas()){
         cout<<"Troll: I cannot belive this! I am not a lier, therefore, you are now the rightful owner of the riches. "<<endl;
         system("pause");
@@ -58,6 +63,7 @@ void funcionfinal(vector<Personaje*> vecPersonaje){
     else{
         cout<<"Troll: I knew that you were set up for failure. No one will ever take my riches!"<<endl;
         system("pause");
+        system("cls");
         inv1 = vecPersonaje[0]->getInventario();
         if(inv1.size() == 2){
             cout<<"Nonetheless, the medallion starts shining, its value is actually greater than all of the coins of the troll."<<endl;
@@ -119,12 +125,14 @@ int main(){
     << "there is always a shorter road. Legend says that a medallion exists, which is quite useful, although no one knows its function." << endl
     << "Only the people who have use it are familiar with its wonders."<< endl;
     system("pause");
+    system("cls");
     cout << "Rumor says that not being greedy enough lead those audicious beings to lose it all." << endl;
     system("pause");
     cout << "Are you sure that you want to take part in this and risk it all to participate in the quest? " << endl;
     system("pause");
     cout << "Who is behind a all of these disappearances? " << endl;
     system("pause");
+    system("cls");
 
 
     cout << "Oh! So you are the adventurer who wants to take part in this quest. I have heard awful stories related to this mission." << endl
@@ -134,7 +142,8 @@ int main(){
     cin >> n;
 
     cout << "Oh " << n << ", of course! I have heard lots about you. Well, nice to meet you."<<endl;
-    
+    system("pause");
+    system("cls");
 
     vector<Personaje*> vecPersonaje;
     Personaje *objPersonaje;
@@ -149,19 +158,12 @@ int main(){
     vecPersonaje[1]->setMonedas(nvalor1);
 
 
-
-    for (int i = 0; i<vecPersonaje.size(); i++){
-        cout<<vecPersonaje[i]->getName()<<endl;
-        cout<<vecPersonaje[i]->getMonedas()<<endl;
-        cout<<vecPersonaje[i]->getVida()<<endl;
-    }
-
-
     cout<<"I will lead you to the mansion. As you can probably tell it is pretty lonely there. We"<<endl
     << "we should start walking now if we want to arrive by noon. The building is impressive, its" << endl
     << "sets the tone to the rest of the quest. The first time I ever saw it I was sort of scared," << endl
     << "but do not fear, you will be fine." << endl;
     system("pause");
+    system("cls");
     cout<<"After hour of walking, we have finally arrived to the location. The house has an obscure feel."<<endl
     << "Come in, do not shy away."<< endl;
     system("pause");
@@ -170,68 +172,26 @@ int main(){
     << "entirely sure of its inside because it is locked. Maybe if we answer all of the riddles available" << endl
     << "we would be able to maybe take a peak in the fifth room." << endl; 
     system("pause");
+    system("cls");
     while(cuarto > 6 || cuarto < 1){
         cout<<"So, which room are you feeling?"<<endl; 
         cout << " [1] Lounge \n [2] Kitchen \n [3] Arts room \n [4] Bedroom \n [5] The secret room \n [6] Your Inventory \n [7] Give up" << endl;
         cin>>cuarto;
-
+        system("cls");
         if(cuarto == 1){
             if(s1.getStatus() == false){
 
                 s1.entrar();
-                cout<<s1.getStatus()<<endl;
                 cout<<s1.getDescripCuarto()<<endl;
-
+                system("pause");
+                system("cls");
                 int resp;
                 cout << s1.getAcertijo() << endl;
                 cin >> resp; //respuesta de opción múltiple al acertijo
                 if(s1.getRespCorrecta() != resp){
                     cout << "Oh no! The answer is wrong, we have failed to correctly solve the riddle." << endl;
                     system("pause");
-                    }
-                else{
-                    cout << "You are terrific! Ypu have the skills of a detective! You have adquired coins."<<endl;
-                    if(vecPersonaje[0]->getMonedas() == 0){
-                        vecPersonaje[0]->addItemMoneda();
-                        i1.use();
-                        nvalor = i1.getValor();
-                        vecPersonaje[0]->setMonedas(nvalor);
-
-                        cout<<vecPersonaje[0]->getMonedas()<<endl;
-                    }
-                    else{
-                        i1.use();
-                        nvalor = i1.getValor();
-                        oldvalor = vecPersonaje[0]->getMonedas();
-                        nvalor = oldvalor + nvalor;
-                        vecPersonaje[0]->setMonedas(nvalor);
-                        cout<<vecPersonaje[0]->getMonedas()<<endl;
-                    }
-                    s1.setStatus(true);
-                } 
-                cuarto = 0;
-                s1.salir();
-            }
-            else{
-                cout<<"We have already entered this room."<<endl;
-                system("pause");
-                cuarto = 0;
-            }
-        }
-        else if(cuarto == 2){
-                
-                if(c1.getStatus() == false){
-
-                c1.entrar();
-                cout<<c1.getStatus()<<endl;
-                cout<<c1.getDescripCuarto()<<endl;
-
-                int resp;
-                cout << c1.getAcertijo() << endl;
-                cin >> resp; //respuesta de opción múltiple al acertijo
-                if(c1.getRespCorrecta() != resp){
-                    cout << "Oh no! The answer is wrong, we have failed to correctly solve the riddle." << endl;
-                    system("pause");
+                    system("cls");
                     }
                 else{
                     cout << "You are terrific! You have the skills of a detective! You have adquired coins."<<endl;
@@ -240,8 +200,6 @@ int main(){
                         i1.use();
                         nvalor = i1.getValor();
                         vecPersonaje[0]->setMonedas(nvalor);
-
-                        cout<<vecPersonaje[0]->getMonedas()<<endl;
                     }
                     else{
                         i1.use();
@@ -249,16 +207,64 @@ int main(){
                         oldvalor = vecPersonaje[0]->getMonedas();
                         nvalor = oldvalor + nvalor;
                         vecPersonaje[0]->setMonedas(nvalor);
-                        cout<<vecPersonaje[0]->getMonedas()<<endl;
+                    }
+                    s1.setStatus(true);
+                } 
+                cuarto = 0;
+                s1.salir();
+                system("pause");
+                system("cls");
+            }
+            else{
+                cout<<"We have already entered this room."<<endl;
+                system("pause");
+                system("cls");
+                cuarto = 0;
+            }
+        }
+        else if(cuarto == 2){
+                
+                if(c1.getStatus() == false){
+
+                c1.entrar();
+                cout<<c1.getDescripCuarto()<<endl;
+                system("pause");
+                system("cls");
+
+                int resp;
+                cout << c1.getAcertijo() << endl;
+                cin >> resp; //respuesta de opción múltiple al acertijo
+                if(c1.getRespCorrecta() != resp){
+                    cout << "Oh no! The answer is wrong, we have failed to correctly solve the riddle." << endl;
+                    system("pause");
+                    system("cls");
+                    }
+                else{
+                    cout << "You are terrific! You have the skills of a detective! You have adquired coins."<<endl;
+                    if(vecPersonaje[0]->getMonedas() == 0){
+                        vecPersonaje[0]->addItemMoneda();
+                        i1.use();
+                        nvalor = i1.getValor();
+                        vecPersonaje[0]->setMonedas(nvalor);
+                    }
+                    else{
+                        i1.use();
+                        nvalor = i1.getValor();
+                        oldvalor = vecPersonaje[0]->getMonedas();
+                        nvalor = oldvalor + nvalor;
+                        vecPersonaje[0]->setMonedas(nvalor);
                     }
                     c1.setStatus(true);
                 } 
                 cuarto = 0;
                 c1.salir();
+                system("pause");
+                system("cls");
             }
             else{
                 cout<<"We have already entered this room."<<endl;
                 system("pause");
+                system("cls");
                 cuarto = 0;
             }
         }
@@ -266,15 +272,16 @@ int main(){
                 if(a1.getStatus() == false){
 
                 a1.entrar();
-                cout<<a1.getStatus()<<endl;
                 cout<<a1.getDescripCuarto()<<endl;
-
+                system("pause");
+                system("cls");
                 int resp;
                 cout << a1.getAcertijo() << endl;
                 cin >> resp; //respuesta de opción múltiple al acertijo
                 if(a1.getRespCorrecta() != resp){
                     cout << "Oh no! The answer is wrong, we have failed to correctly solve the riddle." << endl;
                     system("pause");
+                    system("cls");
                     }
                 else{
                     cout << "You are terrific! Ypu have the skills of a detective! You have adquired coins."<<endl;
@@ -283,8 +290,6 @@ int main(){
                         i1.use();
                         nvalor = i1.getValor();
                         vecPersonaje[0]->setMonedas(nvalor);
-
-                        cout<<vecPersonaje[0]->getMonedas()<<endl;
                     }
                     else{
                         i1.use();
@@ -298,10 +303,13 @@ int main(){
                 } 
                 cuarto = 0;
                 a1.salir();
+                system("pause");
+                system("cls");
             }
             else{
                 cout<<"We have already entered this room."<<endl;
                 system("pause");
+                system("cls");
                 cuarto = 0;
             }
         }
@@ -309,15 +317,16 @@ int main(){
                 if(h1.getStatus() == false){
 
                 h1.entrar();
-                cout<<h1.getStatus()<<endl;
                 cout<<h1.getDescripCuarto()<<endl;
-
+                system("pause");
+                system("cls");
                 int resp;
                 cout << h1.getAcertijo() << endl;
                 cin >> resp; //respuesta de opción múltiple al acertijo
                 if(h1.getRespCorrecta() != resp){
                     cout << "Oh no! The answer is wrong, we have failed to correctly solve the riddle" << endl;
                     system("pause");
+                    system("cls");
                     }
                 else{
                     cout << "You are terrific! Ypu have the skills of a detective! You have adquired coins."<<endl;
@@ -326,8 +335,6 @@ int main(){
                         i1.use();
                         nvalor = i1.getValor();
                         vecPersonaje[0]->setMonedas(nvalor);
-
-                        cout<<vecPersonaje[0]->getMonedas()<<endl;
                     }
                     else{
                         i1.use();
@@ -335,16 +342,18 @@ int main(){
                         oldvalor = vecPersonaje[0]->getMonedas();
                         nvalor = oldvalor + nvalor;
                         vecPersonaje[0]->setMonedas(nvalor);
-                        cout<<vecPersonaje[0]->getMonedas()<<endl;
                     }
                     h1.setStatus(true);
                 } 
                 cuarto = 0;
                 h1.salir();
+                system("pause");
+                system("cls");
             }
             else{
                 cout<<"We have already entered this room."<<endl;
                 system("pause");
+                system("cls");
                 cuarto = 0;
             }
         }
@@ -353,6 +362,7 @@ int main(){
                 cout<<"An image is suddenly visible on the door of the secret room, an emblem that represent each of the"<<endl
                 << "past rooms is shown. A new previously not visible saying appears on the wall. It read the following:"<< endl;
                 system("pause");
+                system("cls");
                 cout<<"Who is behind of all the disappearances? (Give a single-word answer.)"<<endl;
                 cin>>resMedallon;
                 if(resMedallon == "troll" ||resMedallon == "Troll" || resMedallon == "Trol" || resMedallon == "TROLL" || resMedallon == "trol" ){
@@ -361,6 +371,7 @@ int main(){
                     cout << "Congratulations! You have adquired the medallion, only those with a top-analyzing skills have gotten it." << endl
                     << "Its use is not clear for now, but it is important." << endl; 
                     system("pause");
+                    system("cls");
                     funcionfinal(vecPersonaje);
                 }
                 else{
@@ -370,12 +381,14 @@ int main(){
             else{
                 cout<<"I think that we have not searched in all of the previous rooms. We should probably go back and chechk which are we missing to answer the riddle in."<<endl;
                 system("pause");
+                system("cls");
                 cuarto = 0; // si te manda de nuevo a pregunatar por cuartos?
             }
         }
         else if(cuarto == 6){
             vecPersonaje[0]->showInventory();
             system("pause");
+            system("cls");
             cuarto = 0;
         }
         else if(cuarto == 7){
@@ -385,6 +398,8 @@ int main(){
         }
         else{
             cout<<"We should try another number from the ones shown."<<endl;
+            system("pause");
+            system("cls");
             cuarto = 0;
         }
     }
