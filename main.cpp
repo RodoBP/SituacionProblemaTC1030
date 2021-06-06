@@ -65,6 +65,7 @@ void fight(vector<Personaje*> vecPersonaje){
             exit(1);
         }
     else{
+        
         cout<<"You beat the troll"<<endl;
         cout<<"Wow, we made it! You can now take the riches and call yourself a winner."<<endl;
         system("pause");
@@ -72,7 +73,7 @@ void fight(vector<Personaje*> vecPersonaje){
     }
 }
 
-void funcionfinal(vector<Personaje*> vecPersonaje){
+void funcionfinal(vector<Personaje*> vecPersonaje, int *contadorMed){
     vector<Item*> inv1;
     cout<<"The door of the Secret room has been opened. Wow! I have never I my life seen this many gems, coins, and diamonds."<< endl
     << "The room is completely full of them! We have finally made it!" << endl;
@@ -102,7 +103,7 @@ void funcionfinal(vector<Personaje*> vecPersonaje){
         system("pause");
         system("cls");
         inv1 = vecPersonaje[0]->getInventario();
-        if(inv1.size() == 2){
+        if(*contadorMed == 1){
             cout<<"Nonetheless, the medallion starts shining, its value is actually greater than all of the coins of the troll."<<endl;
             system("pause");
             cout<<"So, you have won all of the riches."<<endl;
@@ -131,6 +132,7 @@ int main(){
     int nvalor = 0;
     int nvalor1 = 0;
     int oldvalor = 0;
+    int contadorMed = 0;
 
     // Cuartos
     vector<Cuarto*> vecCuarto;
@@ -229,7 +231,7 @@ int main(){
                     cout << "Oh no! The answer is wrong, we have failed to correctly solve the riddle." << endl;
                     system("pause");
                     system("cls");
-                    }
+                }
                 else{
                     cout << "You are terrific! You have the skills of a detective! You have adquired coins."<<endl;
                     if(vecPersonaje[0]->getMonedas() == 0){
@@ -411,14 +413,15 @@ int main(){
                 cin>>resMedallon;
                 if(resMedallon == "troll" ||resMedallon == "Troll" || resMedallon == "Trol" || resMedallon == "TROLL" || resMedallon == "trol" ){
                     vecPersonaje[0]->addItemMedallon();
+                    contadorMed = 1;
                     cout << "Congratulations! You have adquired the medallion, only those with a top-analyzing skills have gotten it." << endl
                     << "Its use is not clear for now, but it is important." << endl; 
                     system("pause");
                     system("cls");
-                    funcionfinal(vecPersonaje);
+                    funcionfinal(vecPersonaje, &contadorMed);
                 }
                 else{
-                    funcionfinal(vecPersonaje);
+                    funcionfinal(vecPersonaje, &contadorMed);
                 }
             }
             else{

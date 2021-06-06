@@ -15,6 +15,6 @@ class Sala: public Cuarto{
 Sala::Sala(){
     descripCuarto = "This room has a huge sofa and Tv. The Tv is turned on and tuned in a cooking channel for mystical cratures. Everything looks pretty neat.";
     status = false; // singnifica que el cuarto no esta completado
-    acertijo  = "Aquí va el acertijo";
+    acertijo  = "Acertijo";
     respCorrecta  = 1; //La respuesta es 1
 }
