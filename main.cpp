@@ -9,7 +9,6 @@ Grupo 700
 #include <string>
 using namespace std;
 
-
 #include "Jugador.h"
 #include "Troll.h"
 #include "Sala.h"
@@ -73,7 +72,7 @@ void fight(vector<Personaje*> vecPersonaje){
     }
 }
 
-void funcionfinal(vector<Personaje*> vecPersonaje, int *contadorMed){
+void funcionfinal(vector<Personaje*> vecPersonaje){
     vector<Item*> inv1;
     cout<<"The door of the Secret room has been opened. Wow! I have never I my life seen this many gems, coins, and diamonds."<< endl
     << "The room is completely full of them! We have finally made it!" << endl;
@@ -103,7 +102,7 @@ void funcionfinal(vector<Personaje*> vecPersonaje, int *contadorMed){
         system("pause");
         system("cls");
         inv1 = vecPersonaje[0]->getInventario();
-        if(*contadorMed == 1){
+        if(inv1[1]->getName() == "Medallon"){
             cout<<"Nonetheless, the medallion starts shining, its value is actually greater than all of the coins of the troll."<<endl;
             system("pause");
             cout<<"So, you have won all of the riches."<<endl;
@@ -132,7 +131,6 @@ int main(){
     int nvalor = 0;
     int nvalor1 = 0;
     int oldvalor = 0;
-    int contadorMed = 0;
 
     // Cuartos
     vector<Cuarto*> vecCuarto;
@@ -413,15 +411,14 @@ int main(){
                 cin>>resMedallon;
                 if(resMedallon == "troll" ||resMedallon == "Troll" || resMedallon == "Trol" || resMedallon == "TROLL" || resMedallon == "trol" ){
                     vecPersonaje[0]->addItemMedallon();
-                    contadorMed = 1;
                     cout << "Congratulations! You have adquired the medallion, only those with a top-analyzing skills have gotten it." << endl
                     << "Its use is not clear for now, but it is important." << endl; 
                     system("pause");
                     system("cls");
-                    funcionfinal(vecPersonaje, &contadorMed);
+                    funcionfinal(vecPersonaje);
                 }
                 else{
-                    funcionfinal(vecPersonaje, &contadorMed);
+                    funcionfinal(vecPersonaje);
                 }
             }
             else{
