@@ -132,26 +132,6 @@ int main(){
     int nvalor1 = 0;
     int oldvalor = 0;
 
-    // Cuartos
-    vector<Cuarto*> vecCuarto;
-    Cuarto *objCuarto;
-    objCuarto = new Cuarto("Sala",0);
-    vecCuarto.push_back(objCuarto);
-
-    objCuarto = new Cuarto("Cocina",0);
-    vecCuarto.push_back(objCuarto);
-
-    objCuarto = new Cuarto("Cuarto del Arte",0);
-    vecCuarto.push_back(objCuarto);
-
-    objCuarto = new Cuarto("Habitacion",0);
-    vecCuarto.push_back(objCuarto);
-
-    objCuarto = new Cuarto("Cuarto Final Secreto",1);
-    vecCuarto.push_back(objCuarto);
-
-
-
 
     cout << "In a land far, far away, plenty of riches stay hidden. All of the individuals who have dared to seek them" << endl
     << "have lost their lives. Those with an eager heart expose themselves to the risks and decide to undertake the mission" << endl
