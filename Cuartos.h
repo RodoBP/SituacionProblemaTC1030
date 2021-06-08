@@ -20,7 +20,6 @@ class Cuarto{
         string getDescripCuarto();
         int getStatus();
         string getAcertijo();
-        void setAcertijo(string);
         int getRespCorrecta();
         void entrar();
         void salir();
