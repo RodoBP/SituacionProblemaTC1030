@@ -15,7 +15,6 @@ using namespace std;
 #include "Cocina.h"
 #include "CuartoArte.h"
 #include "Habitacion.h"
-#include "CuartodelSecreto.h"
 
 void fight(vector<Personaje*> vecPersonaje){
     cout << "Even though I did not have enough coins, I will fight to win it all! Let's start the combat, Troll!" << endl;
@@ -122,7 +121,7 @@ int main(){
     Cocina c1;
     CuartoArte a1;
     Habitacion h1;
-    CuartoSecreto cs1;
+
 
     string n = "";
     string resp = "";
@@ -203,7 +202,16 @@ int main(){
                 system("pause");
                 system("cls");
                 int resp;
+                s1.randomAcertijo();
+
                 cout << s1.getAcertijo() << endl;
+
+                cout<< "Choose your answer: "<<endl
+                <<"[1] A coin"<<endl
+                <<"[2] Your word"<<endl
+                <<"[3] A riddle"<<endl
+                <<"[4] A secret"<<endl;
+
                 cin >> resp; //respuesta de opción múltiple al acertijo
                 if(s1.getRespCorrecta() != resp){
                     cout << "Oh no! The answer is wrong, we have failed to correctly solve the riddle." << endl;
@@ -217,7 +225,6 @@ int main(){
                         i1.use();
                         nvalor = i1.getValor();
                         vecPersonaje[0]->setMonedas(nvalor);
-                        
                     }
                     else{
                         i1.use();
@@ -226,8 +233,8 @@ int main(){
                         nvalor = oldvalor + nvalor;
                         vecPersonaje[0]->setMonedas(nvalor);
                     }
-                } 
                 s1.setStatus(true);
+                } 
                 cuarto = 0;
                 s1.salir();
                 system("pause");
@@ -241,7 +248,6 @@ int main(){
             }
         }
         else if(cuarto == 2){
-                
                 if(c1.getStatus() == false){
 
                 c1.entrar();
@@ -250,7 +256,15 @@ int main(){
                 system("cls");
 
                 int resp;
+                c1.randomAcertijo();
                 cout << c1.getAcertijo() << endl;
+
+                cout<< "Choose your answer: "<<endl
+                <<"[1] Food"<<endl
+                <<"[2] A tongue"<<endl
+                <<"[3] Time"<<endl
+                <<"[4] A fire"<<endl;
+
                 cin >> resp; //respuesta de opción múltiple al acertijo
                 if(c1.getRespCorrecta() != resp){
                     cout << "Oh no! The answer is wrong, we have failed to correctly solve the riddle." << endl;
@@ -273,9 +287,8 @@ int main(){
                         nvalor = oldvalor + nvalor;
                         vecPersonaje[0]->setMonedas(nvalor);
                     }
-                    
+                c1.setStatus(true);    
                 } 
-                c1.setStatus(true);
                 cuarto = 0;
                 c1.salir();
                 system("pause");
@@ -296,7 +309,16 @@ int main(){
                 system("pause");
                 system("cls");
                 int resp;
+                a1.randomAcertijo();
+
                 cout << a1.getAcertijo() << endl;
+
+                cout<< "Choose your answer: "<<endl
+                <<"[1] A chest"<<endl
+                <<"[2] A piano"<<endl
+                <<"[3] Deck of Cards"<<endl
+                <<"[4] A map"<<endl;
+
                 cin >> resp; //respuesta de opción múltiple al acertijo
                 if(a1.getRespCorrecta() != resp){
                     cout << "Oh no! The answer is wrong, we have failed to correctly solve the riddle." << endl;
@@ -320,9 +342,8 @@ int main(){
                         vecPersonaje[0]->setMonedas(nvalor);
                         cout<<vecPersonaje[0]->getMonedas()<<endl;
                     }
-                    
+                a1.setStatus(true);    
                 } 
-                a1.setStatus(true);
                 cuarto = 0;
                 a1.salir();
                 system("pause");
@@ -343,7 +364,16 @@ int main(){
                 system("pause");
                 system("cls");
                 int resp;
+                h1.randomAcertijo();
+
                 cout << h1.getAcertijo() << endl;
+
+                cout<< "Choose your answer: "<<endl
+                <<"[1] Shoes"<<endl
+                <<"[2] Your name"<<endl
+                <<"[3] A hourglass"<<endl
+                <<"[4] Oxygen"<<endl;
+
                 cin >> resp; //respuesta de opción múltiple al acertijo
                 if(h1.getRespCorrecta() != resp){
                     cout << "Oh no! The answer is wrong, we have failed to correctly solve the riddle" << endl;
@@ -366,9 +396,8 @@ int main(){
                         nvalor = oldvalor + nvalor;
                         vecPersonaje[0]->setMonedas(nvalor);
                     }
-                    
+                h1.setStatus(true);    
                 } 
-                h1.setStatus(true);
                 cuarto = 0;
                 h1.salir();
                 system("pause");

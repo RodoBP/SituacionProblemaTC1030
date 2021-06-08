@@ -25,6 +25,7 @@ class Cuarto{
         void entrar();
         void salir();
         void setStatus(bool);
+        virtual void randomAcertijo();
 };
 
 Cuarto::Cuarto(){
@@ -60,4 +61,9 @@ void Cuarto::entrar(){
 void Cuarto::salir(){
     cout << "You have left the room."<< endl;
 }
+
+void Cuarto::randomAcertijo(){
+
+}
+
 #endif
