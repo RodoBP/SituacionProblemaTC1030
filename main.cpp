@@ -4,9 +4,10 @@ TC1030
 Programación Orientada a Objetos
 Grupo 700
 29 de mayo de 2021*/
-#include <iostream>
-#include <vector>
-#include <string>
+#include<iostream>
+#include<vector>
+#include<string>
+#include<limits>
 using namespace std;
 
 #include "Jugador.h"
@@ -24,6 +25,10 @@ void fight(vector<Personaje*> vecPersonaje){
     
     while(vecPersonaje[0]->getVida()>0 || vecPersonaje[1]->getVida()>0){
         int hits = (rand() % ATTACK) + 1;
+        
+        if (vecPersonaje[0]->getVida()<=0 || vecPersonaje[1]->getVida()<=0){
+            break;
+        }
         vecPersonaje[0]->hit();
         vecPersonaje[1]->setVida(hits);
         if(vecPersonaje[0] -> getVida() < 0){
@@ -36,10 +41,11 @@ void fight(vector<Personaje*> vecPersonaje){
         cout << "The troll has " << vecPersonaje[1] -> getVida() << "% HP."  <<endl;
         cout << "You have " <<  vecPersonaje[0] -> getVida() << " % HP." << endl;
         cout << "..............................................." << endl;
-        Sleep(3000);
+        system("pause");
         if (vecPersonaje[0]->getVida()<=0 || vecPersonaje[1]->getVida()<=0){
             break;
         }
+
         else{
             vecPersonaje[1] ->hit();
             hits = (rand() % ATTACK) + 1;
@@ -53,7 +59,7 @@ void fight(vector<Personaje*> vecPersonaje){
             cout << "The troll has " << vecPersonaje[1] -> getVida() << "% HP."  <<endl;
             cout << "You have " <<  vecPersonaje[0] -> getVida() << " % HP." << endl;
             cout << "..............................................." << endl;
-            Sleep(3000);
+            system("pause");
         }
 
          
@@ -101,7 +107,7 @@ void funcionfinal(vector<Personaje*> vecPersonaje){
         system("pause");
         system("cls");
         inv1 = vecPersonaje[0]->getInventario();
-        if(inv1[1]->getName() == "Medallon"){
+        if(inv1.size() == 2){
             cout<<"Nonetheless, the medallion starts shining, its value is actually greater than all of the coins of the troll."<<endl;
             system("pause");
             cout<<"So, you have won all of the riches."<<endl;
@@ -171,6 +177,7 @@ int main(){
     vecPersonaje.push_back(objPersonaje);
 
     nvalor1 = static_cast<Troll *>(vecPersonaje[1])->randomMonedas();
+    vecPersonaje[1]->addItemMoneda();
     vecPersonaje[1]->setMonedas(nvalor1);
 
 
@@ -192,7 +199,11 @@ int main(){
     while(cuarto > 6 || cuarto < 1){
         cout<<"So, which room are you feeling?"<<endl; 
         cout << " [1] Lounge \n [2] Kitchen \n [3] Arts room \n [4] Bedroom \n [5] The secret room \n [6] Your Inventory \n [7] Give up" << endl;
-        cin>>cuarto;
+        while(!(cin >> cuarto)){
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid input.  Try again:\n";
+	    }
         system("cls");
         if(cuarto == 1){
             if(s1.getStatus() == false){
@@ -421,7 +432,8 @@ int main(){
                 if(resMedallon == "troll" ||resMedallon == "Troll" || resMedallon == "Trol" || resMedallon == "TROLL" || resMedallon == "trol" ){
                     vecPersonaje[0]->addItemMedallon();
                     cout << "Congratulations! You have adquired the medallion, only those with a top-analyzing skills have gotten it." << endl
-                    << "Its use is not clear for now, but it is important." << endl; 
+                    << "Its use is not clear for now, but it is important." << endl;
+
                     system("pause");
                     system("cls");
                     funcionfinal(vecPersonaje);
@@ -449,9 +461,8 @@ int main(){
             exit(1);
         }
         else{
-            cout<<"We should try another number from the ones shown."<<endl;
-            system("pause");
-            system("cls");
+            cout<<"We should try another number from the ones shown."<<endl; 
+            cout<<cuarto<<endl;          
             cuarto = 0;
         }
     }

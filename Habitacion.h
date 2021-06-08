@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /* Silvana Dorita Ruiz Olivarría A01252346
 Luis Rodolfo Bojórquez Pineda A01250513
 TC1030
@@ -53,3 +54,24 @@ void Habitacion::randomAcertijo(){
     }
 
 }
+=======
+/* Silvana Dorita Ruiz Olivarría A01252346
+Luis Rodolfo Bojórquez Pineda A01250513
+TC1030
+Programación Orientada a Objetos
+Grupo 700
+29 de mayo de 2021*/
+
+#include "Cuartos.h"
+
+class Habitacion: public Cuarto{
+    public:
+        Habitacion();
+};
+
+Habitacion:: Habitacion(){
+    descripCuarto = "Descripcion de habitacion";
+    status = false;
+    acertijo = "";
+}
+>>>>>>> Stashed changes

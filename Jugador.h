@@ -23,7 +23,7 @@ Jugador::Jugador(){
 Jugador::Jugador(string nom): Personaje(nom) {
     nombre = nom;
     monedas = 0;
-    HP = 70;
+    HP = 100;
 }
 
 void Jugador::hit(){

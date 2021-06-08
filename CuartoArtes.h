@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream:Sala.h
 /* Silvana Dorita Ruiz Olivarría A01252346
 Luis Rodolfo Bojórquez Pineda A01250513
 TC1030
@@ -52,4 +53,24 @@ void Sala::randomAcertijo(){
         respCorrecta = 4; //A secret
     }
 
+=======
+/* Silvana Dorita Ruiz Olivarría A01252346
+Luis Rodolfo Bojórquez Pineda A01250513
+TC1030
+Programación Orientada a Objetos
+Grupo 700
+29 de mayo de 2021*/
+
+#include "Cuartos.h"
+
+class CuartoArte: public Cuarto{
+    public:
+        CuartoArte();
+};
+
+CuartoArte:: CuartoArte(){
+    descripCuarto = "Descripcion de CuartoArte";
+    status = false;
+    acertijo = "";
+>>>>>>> Stashed changes:CuartoArtes.h
 }
