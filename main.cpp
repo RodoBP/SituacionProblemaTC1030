@@ -214,7 +214,7 @@ int main(){
 
                 cin >> resp; //respuesta de opción múltiple al acertijo
                 if(s1.getRespCorrecta() != resp){
-                    cout << "Oh no! The answer is wrong, we have failed to correctly solve the riddle." << endl;
+                    cout << "Oh no! The answer is wrong, we have failed to correctly solve the riddle. We have to enter this room again and try to guess correctly the riddle." << endl;
                     system("pause");
                     system("cls");
                 }
@@ -267,7 +267,7 @@ int main(){
 
                 cin >> resp; //respuesta de opción múltiple al acertijo
                 if(c1.getRespCorrecta() != resp){
-                    cout << "Oh no! The answer is wrong, we have failed to correctly solve the riddle." << endl;
+                    cout << "Oh no! The answer is wrong, we have failed to correctly solve the riddle. We have to enter this room again and try to guess correctly the riddle." << endl;
                     system("pause");
                     system("cls");
                     }
@@ -321,7 +321,7 @@ int main(){
 
                 cin >> resp; //respuesta de opción múltiple al acertijo
                 if(a1.getRespCorrecta() != resp){
-                    cout << "Oh no! The answer is wrong, we have failed to correctly solve the riddle." << endl;
+                    cout << "Oh no! The answer is wrong, we have failed to correctly solve the riddle. We have to enter this room again and try to guess correctly the riddle." << endl;
                     system("pause");
                     system("cls");
                     }
@@ -376,7 +376,7 @@ int main(){
 
                 cin >> resp; //respuesta de opción múltiple al acertijo
                 if(h1.getRespCorrecta() != resp){
-                    cout << "Oh no! The answer is wrong, we have failed to correctly solve the riddle" << endl;
+                    cout << "Oh no! The answer is wrong, we have failed to correctly solve the riddle. We have to enter this room again and try to guess correctly the riddle." << endl;
                     system("pause");
                     system("cls");
                     

@@ -32,12 +32,12 @@ void CuartoArte::randomAcertijo(){
     int race = rand() % range + min;
 
     if(race == 1){
-        acertijo = "I guard precious treasures and yet my body never moves, but I open like a book when something of yours is used.\n When finally I'm gutted always feel quite blue. I always feel so useless without the gold that I consume.";
+        acertijo = "I guard precious treasures and yet my body never moves, but I open like a book when something of yours is used.\n When finally I am gutted always feel quite blue. I always feel so useless without the gold that I consume.";
         respCorrecta = 1; //A chest
     }
 
     else if(race == 2){
-        acertijo = "I’m made out of five letters, And I’m made out of seven letters; \nI have keys but I don’t have locks, I’m concerned with time, but not with clocks.";
+        acertijo = "I am made out of five letters, And I am made out of seven letters; \nI have keys but I do not have locks, I am concerned with time, but not with clocks.";
         respCorrecta = 2; //A piano
     }
 

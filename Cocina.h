@@ -32,7 +32,7 @@ void Cocina::randomAcertijo(){
     int race = rand() % range + min;
 
     if(race == 1){
-        acertijo = "I am what's desired above of all fame and wealth. Without me it's assured that you'll begin to lose your health.\nI'm not a fluid dancer, but you can put me on a shelf. What am I? ";
+        acertijo = "I am what is desired above of all fame and wealth. Without me it is assured that you will begin to lose your health.\nI am not a fluid dancer, but you can put me on a shelf. What am I? ";
         respCorrecta = 1; //Food
     }
 

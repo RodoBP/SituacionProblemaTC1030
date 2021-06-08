@@ -30,7 +30,7 @@ void Habitacion::randomAcertijo(){
     int max = 4;
     int range = max - min + 1;
     int race = rand() % range + min;
-    cout<<race<<endl;
+    
 
     if(race == 1){
         acertijo = "The more you walk on me the more we get along, and while other may still use me, with you is where I belong.";
